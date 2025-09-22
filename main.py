@@ -1,7 +1,9 @@
 from stats import count_words,  get_unique_characters, sorted_list
+import sys
 
 def main():
-    path = 'books/frankenstein.txt'
+    validation()
+    path = sys.argv[1]
     text = get_book_text(path)
     number_of_words = count_words(text)
     each_character_dict = get_unique_characters(text)
@@ -12,6 +14,10 @@ def get_book_text(file_path):
     with open(file_path) as f:
         return f.read()
 
+def validation():
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
 def print_menu(path, number_of_words, sorted_characters):
     print("============ BOOKBOT ============")
