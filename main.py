@@ -28,7 +28,7 @@ def print_menu(path, number_of_words, sorted_characters):
 
     for item in sorted_characters:
         if item["char"].isalpha():
-            print(f"{item["char"]}: {item["num"]}")
+            print(f"{item['char']}: {item['num']}")
         else:
             continue
     
